@@ -1,0 +1,225 @@
+###############################################
+#
+# i3 configuration file
+# -----------------------
+#
+# Version: 0.1 - 18/01/2019
+# Author: Pedro
+
+###############################################
+# Colors
+###############################################
+
+# my colors configuration are never perfect
+#
+# class                  border  backgr  text     indicator child_border
+client.focused           #ffff00  #2f3d44 #cfd8dc  #778dac   #778dac
+client.focused_inactive  #333c4a #2f3d44 #b2babd  #333c4a   #333c4a
+client.unfocused         #333c4a #222d32 #b2babd  #2f3d44   #333c4a
+client.urgent            #03a9f4 #2f3d44 #ffffff  #2f3d44   #03a9f4
+
+
+###############################################
+# Windows style
+###############################################
+
+# set default orientation, <horizontal|vertical|auto>
+default_orientation horizontal
+
+new_window pixel 2
+
+# Back and forth workplace switching
+workspace_auto_back_and_forth yes
+
+# Use Mouse+Ctrl to drag floating windows to their wanted position
+floating_modifier Ctrl
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym 113 resize shrink width 10 px or 10 pptzz
+        bindsym 116 resize grow height 10 px or 10 ppt
+        bindsym 111 resize shrink height 10 px or 10 ppt
+        bindsym 114 resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+z mode "resize"
+
+
+###############################################
+# Keybindings
+###############################################
+
+# Mod4 = Super Key
+set $mod Mod4
+
+# start a terminal
+bindsym $mod+Return exec --no-startup-id kitty
+
+# kill focused window
+bindsym $mod+Shift+Q kill
+
+# change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+J move left
+bindsym $mod+Shift+K move down
+bindsym $mod+Shift+L move up
+bindsym $mod+Shift+colon move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, default)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout default
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindcode $mod+d focus child
+
+# reload the configuration file
+bindsym $mod+Shift+C reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+R restart
+
+# exit i3 (logs you out of your X session)
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# exit xfce4
+bindsym $mod+Shift+e exec --no-startup-id i3lock
+
+
+###############################################
+# Workspaces
+###############################################
+
+# customize workspaces name
+set $ws1 
+set $ws2 
+set $ws3 
+set $ws4 
+set $ws5 
+set $ws6 
+set $ws7 
+
+workspace $ws1 output HDMI1 eDP1
+workspace $ws2 output HDMI1
+workspace $ws3 output HDMI1
+workspace $ws4 output HDMI1
+workspace $ws5 output eDP1
+workspace $ws6 output eDP1
+workspace $ws7 output eDP1
+
+# switch to workspace
+bindsym $mod+KP_End workspace $ws1
+bindsym $mod+KP_Down workspace $ws2
+bindsym $mod+KP_Next workspace $ws3
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+## Workspaces assignment
+# force a window on a named workspace
+# xprop | grep 'CLASS', to get the name of the window class
+#assign [class="Xfce4-terminal"]	$ws1
+assign [class="Chromium"]	$ws2
+assign [class="Slack"]    $ws3
+assign [class="Spotify"]  $ws3
+#assign [class='vlc']            $ws6
+
+# enable floating mode for selected windows
+for_window [class="Nitrogen"] floating enable border pixel 2
+
+gaps inner 5
+gaps outer 10
+
+
+
+###############################################
+# My Shortcuts
+###############################################
+
+# applications
+
+bindsym $mod+F1 exec --no-startup-id rofi -show run config $HOME/.config/rofi/theme.rasi
+bindsym $mod+F2 exec --no-startup-id chromium
+bindsym $mod+F3 exec --no-startup-id dolphin
+bindsym $mod+F4 exec --no-startup-id code
+bindsym KP_Up exec --no-startup-id playerctl play-pause
+bindsym KP_Home exec --no-startup-id playerctl previous
+bindsym KP_Prior exec --no-startup-id playerctl next
+bindsym KP_Add exec --no-startup-id amixer sset 'Master' 5%+
+bindsym KP_Subtract exec --no-startup-id amixer sset 'Master' 5%-
+bindsym KP_Multiply exec --no-startup-id amixer sset 'Master' 0%
+###############################################
+# Start up commands
+###############################################
+
+##start up applications
+exec --no-startup-id dunst -config $HOME/.config/dunst/dunstrc
+exec --no-startup-id chromium
+exec --no-startup-id spotify
+exec --no-startup-id slack
+exec --no-startup-id compton
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id nitrogen --restore
