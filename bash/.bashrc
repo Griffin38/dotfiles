@@ -75,6 +75,7 @@ alias ggpush='git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)'
 alias gbda='git branch --merged | grep -vE "master" | grep -vE "\*" | command xargs -n 1 git branch -d'
 
 #work related
+export PATH_TO_PROJECTS="$HOME/Documents/Code"
 alias rs='./bin/rails s -b 127.0.0.1'
 alias rc='./bin/rails c'
 alias jek='bundle exec jekyll serve'
