@@ -63,7 +63,7 @@ font-2 = "Font Awesome 5 Brands:size=10;"
 
 modules-left = volume music musicStatus title
 modules-center = i3
-modules-right =  date bluetoothStatus ssid
+modules-right =  date bluetoothStatus battery ssid
 
 #tray-position =
 
@@ -101,7 +101,8 @@ font-2 = "Font Awesome 5 Brands:size=10;"
 
 
 modules-left = date
-modules-center = i3
+modules-center = i3 
+modules-right = battery ssid
 
 #tray-position =
 
@@ -134,7 +135,7 @@ interval = 2
 [module/bluetoothStatus]
 type = custom/script
 exec = ~/polybar-scripts/bluetooth.sh
-interval = 1
+interval = 10
 
 [module/ssid]
 type = custom/script
@@ -220,6 +221,27 @@ label-visible-padding = ${self.label-focused-padding}
 label-urgent = %name%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
+
+[module/battery]
+type = internal/battery
+
+; This is useful in case the battery never reports 100% charge
+full-at = 100
+
+; Use the following command to list batteries and adapters:
+; $ ls -1 /sys/class/power_supply/
+battery = BAT0
+adapter = AC
+
+; Disable polling by setting the interval to 0.
+;
+; Default: 5
+poll-interval = 5
+format-charging =  <label-charging>
+format-discharging =  <label-discharging>
+label-charging = %percentage%%
+label-discharging = %percentage%%
+label-full = 
 
 [settings]
 screenchange-reload = true
