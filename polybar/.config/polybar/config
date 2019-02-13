@@ -111,8 +111,12 @@ cursor-scroll = ns-resize
 
 [module/volume]
 type = internal/alsa
-format-volume =  <label-volume> |
-format-muted =       |
+format-volume =  <label-volume> <ramp-volume> |
+format-muted =       |
+; Only applies if <ramp-volume> is used
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
 
 [module/music]
 type = custom/script
@@ -139,7 +143,7 @@ interval = 10
 
 [module/ssid]
 type = custom/script
-exec = if [ "$(iwgetid)" = "" ]; then echo Ethernet; else echo $(iwgetid -r); fi
+exec = if [ "$(iwgetid)" = "" ]; then echo Ethernet; else echo  $(iwgetid -r); fi
 click-middle = notify-send $(hostname -I | cut -d ' ' -f 1)
 
 [module/date]
@@ -180,12 +184,12 @@ label-empty-padding = 1
 [module/title]
 type = internal/xwindow
 label-empty = Ghost
-label = | %title%
+label =|   %title%   |
 label-maxlen = 40
 format = <label>
 format-background = ${colors.background}
 format-foreground = ${colors.foreground}
-format-padding = 4
+format-padding = 2
 
 
 [module/i3]
