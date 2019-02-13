@@ -134,7 +134,8 @@ scroll-down = mocp -k -10
 [module/musicStatus]
 type = custom/script
 exec = ~/polybar-scripts/statusMusic.sh
-interval = 2
+interval = 0
+click-left = playerctl play-pause
 
 [module/bluetoothStatus]
 type = custom/script
@@ -143,8 +144,9 @@ interval = 10
 
 [module/ssid]
 type = custom/script
-exec = if [ "$(iwgetid)" = "" ]; then echo Ethernet; else echo  $(iwgetid -r); fi
+exec = ~/polybar-scripts/ssid.sh
 click-middle = notify-send $(hostname -I | cut -d ' ' -f 1)
+click-left = exec kitty nmtui-connect
 
 [module/date]
 type = internal/date
@@ -157,7 +159,7 @@ time = %H:%M
 time-alt = %H:%M:%S
 
 format-prefix = 
-format-prefix-foreground = ${colors.foreground-alt}
+#format-prefix-foreground = ${colors.foreground-alt}
 
 label = %date% %time%
 
