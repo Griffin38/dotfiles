@@ -17,8 +17,7 @@
     font = Font Awesome
     line_height = 0
     markup = full
-    format = "<span foreground='#f3f4f5'><b>%s %p</b></span>\n%b"
-    alignment = left
+    format =  "<span foreground='#05b2f4'><b>%s</b>%p</span>\n%b"
     show_age_threshold = 60
     word_wrap = no
     ellipsize = middle
@@ -28,11 +27,11 @@
     show_indicators = yes
     icon_position = left
     max_icon_size = 32
-    icon_path = /usr/share/icons/Papirus-Dark/16x16/status/:/usr/share/icons/Paper/16x16/devices/:/usr/share/icons/Papirus-Dark/16x16/apps/
+    icon_path = /usr/share/icons/Papirus-Dark/32x32/status/:/usr/share/icons/Paper/64x64/devices/:/usr/share/icons/Papirus-Dark/32x32/apps/
     sticky_history = yes
     history_length = 20
     always_run_script = true
-    startup_notification = false
+    startup_notification = true
     verbosity = mesg
     corner_radius = 0
     force_xinerama = false
@@ -47,12 +46,13 @@
 
 [urgency_low]
     background = "#232323"
-    foreground = "#a8a8a8"
+    foreground = "#ffffff"
     timeout = 5
 
 [urgency_normal]
-    background = "#808080"
-    foreground = "#a8a8a8"
+    background = "#c7c3c3"
+    foreground = "#05b2f4"
+    frame_color = "#232323"
     timeout = 10
 
 [urgency_critical]
@@ -60,6 +60,21 @@
     foreground = "#f0e0e0"
     frame_color = "#d64e4e"
     timeout = 0
+    format = "<span foreground='#ffffff'><b>%s</b>%p</span>\n%b"
+
+# Every section that isn't one of the above is interpreted as a rules
+# to override settings for certain messages.
+# Messages can be matched by 'appname', 'summary', 'body' or 'icon'
+# and you can override the 'timeout', 'urgency', 'foreground', 'background'
+# and 'format'.
+# Shell-like globbing will get expanded.
+
+[playing]
+ appname = Spotify
+ format = "<span foreground='#81a926'><b>%s</b>%p</span>\n%b"
 
 [slack]
-   appname = 'Spotify'
+ appname = Slack
+ format = "<span foreground='#FF941C'><b>-%s-</b></span>\n%b"
+ background = "#db7708"
+ foreground = "#ffffff"
