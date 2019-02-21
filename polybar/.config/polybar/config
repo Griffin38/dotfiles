@@ -63,7 +63,7 @@ font-2 = "Font Awesome 5 Brands:size=10;"
 
 modules-left = volume music musicStatus title
 modules-center = i3
-modules-right =  date bluetoothStatus battery ssid
+modules-right =  date backlight bluetoothStatus battery ssid
 
 #tray-position =
 
@@ -102,7 +102,7 @@ font-2 = "Font Awesome 5 Brands:size=10;"
 
 modules-left = date
 modules-center = i3 
-modules-right = battery ssid
+modules-right = backlight battery ssid
 
 #tray-position =
 
@@ -248,6 +248,13 @@ format-discharging =  <label-discharging>
 label-charging = %percentage%%
 label-discharging = %percentage%%
 label-full = 
+
+[module/backlight]
+type = custom/script
+exec = brightnessctl -m | grep -o "[0-9]*%" 
+interval = 0
+click-left= sudo brightnessctl s 10%-
+click-right= sudo brightnessctl s 10%+
 
 [settings]
 screenchange-reload = true
