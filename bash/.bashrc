@@ -99,7 +99,7 @@ alias bell="echo $'\a'"
 alias listS='pacmd list-sinks | grep -e 'name:' -e 'index:''
 alias setOH='pactl set-sink-port 1 analog-output-headphones'
 alias setOS='pactl set-sink-port 1 analog-output-speaker'
-
+alias oops='sudo nano ../../etc/lightdm/lightdm.conf'
 # Protective owl
 echo       '   _________ '
 echo       '  /_  ___   \ '
