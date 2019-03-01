@@ -31,6 +31,11 @@ bottom-foreground = #70ffffff
 iprimary = 	#D3D3D3
 isecondary =  #367588
 
+
+;-------------------------------------------------------------------------------
+;	BARS
+;-------------------------------------------------------------------------------
+
 [bar/main_bar]
 monitor = HDMI1
 width = 100%
@@ -59,14 +64,11 @@ font-0 = "Source Code Pro Semibold:size=10;1"
 font-1 = "Font Awesome 5 Free:style=Solid:size=10;1"
 font-2 = "Font Awesome 5 Brands:size=10;"
 
-
-
 modules-left = volume music musicStatus title
 modules-center = i3
-modules-right =  date backlight bluetoothStatus battery ssid
+modules-right =  date memory cpu backlight bluetoothStatus battery ssid
 
 #tray-position =
-
 cursor-click = pointer
 cursor-scroll = ns-resize
 
@@ -101,13 +103,43 @@ font-2 = "Font Awesome 5 Brands:size=10;"
 
 
 modules-left = date
-modules-center = i3 
-modules-right = backlight battery ssid
+modules-center = i3
+modules-right = memory cpu backlight battery ssid
 
 #tray-position =
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+;-------------------------------------------------------------------------------
+;	DECOR
+;-------------------------------------------------------------------------------
+[module/grip_v]
+type = custom/text
+content = ""
+content-font = 2
+content-foreground = #d3d3d3
+
+[module/arrow_r]
+type = custom/text
+content = ""
+content-font = 2
+content-foreground = #d3d3d3
+
+[module/arrow_l]
+type = custom/text
+content = ""
+content-font = 2
+content-foreground = #d3d3d3
+
+[module/3balls]
+type = custom/text
+content = ""
+content-font = 2
+content-foreground = #d3d3d3
+
+;-------------------------------------------------------------------------------
+;	M O D U L E S
+;-------------------------------------------------------------------------------
 
 [module/volume]
 type = internal/alsa
@@ -118,49 +150,15 @@ ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 
-[module/music]
-type = custom/script
-exec = ~/polybar-scripts/spotify.sh
-interval = 2
-tail = true
-
-click-left = mocp -r
-click-middle = mocp -G
-click-right = mocp -f
-
-scroll-up = mocp -k 10
-scroll-down = mocp -k -10
-
-[module/musicStatus]
-type = custom/script
-exec = ~/polybar-scripts/statusMusic.sh
-interval = 0
-click-left = playerctl play-pause
-
-[module/bluetoothStatus]
-type = custom/script
-exec = ~/polybar-scripts/bluetooth.sh
-interval = 10
-
-[module/ssid]
-type = custom/script
-exec = ~/polybar-scripts/ssid.sh
-click-middle = notify-send $(hostname -I | cut -d ' ' -f 1)
-click-left = exec kitty nmtui-connect
-
 [module/date]
 type = internal/date
 interval = 5
-
 date =
 date-alt = " %d-%m"
-
 time = %H:%M
 time-alt = %H:%M:%S
-
 format-prefix = 
 #format-prefix-foreground = ${colors.foreground-alt}
-
 label = %date% %time%
 
 [module/ewmh]
@@ -199,30 +197,24 @@ type = internal/i3
 format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
-
 ; Only show workspaces on the same output as the bar
 pin-workspaces = true
-
 label-mode-padding = 2
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
-
 ; focused = Active workspace on focused monitor
 label-focused = %name%
 label-focused-background = ${colors.isecondary}
 label-focused-underline= ${colors.iprimary}
 label-focused-padding = 2
-
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %name%
 label-unfocused-padding = 2
-
 ; visible = Active workspace on unfocused monitor
 label-visible = %name%
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
-
 ; urgent = Workspace with urgency hint set
 label-urgent = %name%
 label-urgent-background = ${colors.alert}
@@ -230,17 +222,13 @@ label-urgent-padding = 2
 
 [module/battery]
 type = internal/battery
-
 ; This is useful in case the battery never reports 100% charge
 full-at = 100
-
 ; Use the following command to list batteries and adapters:
 ; $ ls -1 /sys/class/power_supply/
 battery = BAT0
 adapter = AC
-
 ; Disable polling by setting the interval to 0.
-;
 ; Default: 5
 poll-interval = 5
 format-charging =  <label-charging>
@@ -249,18 +237,105 @@ label-charging = %percentage%%
 label-discharging = %percentage%%
 label-full = 
 
+[module/cpu]
+type = internal/cpu
+interval = 1
+; Available tags:
+;   <label> (default)
+;   <bar-load>
+;   <ramp-load>
+;   <ramp-coreload>
+format = <label>
+; Available tokens:
+;   %percentage% (default) - total cpu load averaged over all cores
+;   %percentage-sum% - Cumulative load on all cores
+;   %percentage-cores% - load percentage for each core
+;   %percentage-core[1-9]% - load percentage for specific core
+label =  %percentage%%
+
+[module/memory]
+type = internal/memory
+; Seconds to sleep between updates
+; Default: 1
+interval = 3
+; Available tags:
+;   <label> (default)
+;   <bar-used>
+;   <bar-free>
+;   <ramp-used>
+;   <ramp-free>
+;   <bar-swap-used>
+;   <bar-swap-free>
+;   <ramp-swap-used>
+;   <ramp-swap-free>
+format = <label>
+; Available tokens:
+;   %percentage_used% (default)
+;   %percentage_free%
+;   %gb_used%
+;   %gb_free%
+;   %gb_total%
+;   %mb_used%
+;   %mb_free%
+;   %mb_total%
+;   %percentage_swap_used%
+;   %percentage_swap_free%
+;   %mb_swap_total%
+;   %mb_swap_free%
+;   %mb_swap_used%
+;   %gb_swap_total%
+;   %gb_swap_free%
+;   %gb_swap_used%
+label =  %gb_used%
+
+;-------------------------------------------------------------------------------
+;	Script Modules
+;-------------------------------------------------------------------------------
+
 [module/backlight]
 type = custom/script
-exec = brightnessctl -m | grep -o "[0-9]*%" 
-interval = 0
-click-left= sudo brightnessctl s 10%-
-click-right= sudo brightnessctl s 10%+
+exec =  ~/polybar-scripts/brightness.sh
+interval = 2
+click-left= sudo -u pl brightnessctl s 10%-
+click-right= sudo -u pl brightnessctl s 10%+
 
-[settings]
-screenchange-reload = true
+[module/music]
+type = custom/script
+exec = ~/polybar-scripts/spotify.sh
+interval = 2
+tail = true
 
+click-left = mocp -r
+click-middle = mocp -G
+click-right = mocp -f
+
+scroll-up = mocp -k 10
+scroll-down = mocp -k -10
+
+[module/musicStatus]
+type = custom/script
+exec = ~/polybar-scripts/statusMusic.sh
+interval = 0.5
+click-left = playerctl play-pause
+
+[module/bluetoothStatus]
+type = custom/script
+exec = ~/polybar-scripts/bluetooth.sh
+interval = 10
+
+[module/ssid]
+type = custom/script
+exec = ~/polybar-scripts/ssid.sh
+click-middle = notify-send $(hostname -I | cut -d ' ' -f 1)
+click-left = exec kitty nmtui-connect
+
+;-------------------------------------------------------------------------------
+;	Global
+;-------------------------------------------------------------------------------
 
 [global/wm]
 margin-top = 5
 margin-bottom = 5
 
+[settings]
+screenchange-reload = true
