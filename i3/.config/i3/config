@@ -201,7 +201,7 @@ gaps outer 10
 
 # applications
 
-bindsym $mod+F1 exec --no-startup-id rofi -show run config $HOME/.config/rofi/theme.rasi
+bindsym $mod+F1 exec --no-startup-id rofi -show run -theme $HOME/.config/rofi/theme.rasi
 bindsym $mod+F2 exec --no-startup-id chromium
 bindsym $mod+F3 exec --no-startup-id dolphin
 bindsym $mod+F4 exec --no-startup-id code
