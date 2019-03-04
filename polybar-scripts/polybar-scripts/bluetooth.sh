@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if [ "$(systemctl is-active bluetooth.service)" = "active" ]; then
-  if [ "$(echo -e "devices" | bluetoothctl | grep Mpow)" != '' ]; then
+  if [ "$(echo -e "devices" | bluetoothctl | grep Mpow | wc -l)" > 1 ]; then
     echo ""
   else
 	  echo ""
