@@ -13,24 +13,23 @@
 ;   go to https://github.com/jaagr/polybar
 ;
 ;   The README contains alot of information
-;
+;background = ${#1d1f2110:xrdb:color0}
 ;==========================================================
 
 [colors]
 background = #1d1f2110
 background-alt = #282a2e
-foreground = #c7ccd1
-foreground-alt = #1d1f21
-primary = #ffb52a
-secondary = #e60053
+foreground = ${xrdb:color5:#c7ccd1}
+foreground-alt = ${xrdb:color13:#1d1f21}
+primary = ${xrdb:color1:#ffb52a}
+secondary = ${xrdb:color2:#e60053}
 shaded = #15ffffff
-alert = #bd2c40
+alert =  ${xrdb:color11:#bd2c40}
 highlight = #D9583C
 bottom-background = #00ffffff
 bottom-foreground = #70ffffff
-iprimary = 	#D3D3D3
+iprimary = 	${xrdb:color10:#D3D3D3}
 isecondary =  #367588
-
 
 ;-------------------------------------------------------------------------------
 ;	BARS
@@ -117,7 +116,7 @@ cursor-scroll = ns-resize
 type = custom/text
 content = ""
 content-font = 2
-content-foreground = #d3d3d3
+content-foreground = ${colors.foreground}
 
 [module/arrow_r]
 type = custom/text
@@ -200,12 +199,12 @@ wrapping-scroll = false
 ; Only show workspaces on the same output as the bar
 pin-workspaces = true
 label-mode-padding = 2
-label-mode-foreground = #000
-label-mode-background = ${colors.primary}
+label-mode-foreground = ${colors.foreground}
+label-mode-background = ${colors.iprimary}
 ; focused = Active workspace on focused monitor
 label-focused = %name%
-label-focused-background = ${colors.isecondary}
-label-focused-underline= ${colors.iprimary}
+label-focused-background = ${colors.primary}
+label-focused-underline= ${colors.alert}
 label-focused-padding = 2
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %name%

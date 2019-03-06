@@ -12,13 +12,18 @@
 
 # my colors configuration are never perfect
 #
-# class                  border  backgr  text     indicator child_border
-client.focused           #ffff00  #2f3d44 #cfd8dc  #778dac   #778dac
-client.focused_inactive  #333c4a #2f3d44 #b2babd  #333c4a   #333c4a
-client.unfocused         #333c4a #222d32 #b2babd  #2f3d44   #333c4a
-client.urgent            #03a9f4 #2f3d44 #ffffff  #2f3d44   #03a9f4
+set_from_resource $fg i3wm.color1 #f0f0f0
+set_from_resource $fg2 i3wm.color2 #f0f0f0
+set_from_resource $bg i3wm.color7 #2f3d44
+set_from_resource $bg2 i3wm.color5 #2f3d44
+# class                 border  backgr. text indicator child_border
+client.focused          $bg     $bg2     $fg2  $bg2       $bg2
+client.focused_inactive $bg     $bg     $fg  $bg       $bg
+client.unfocused        $bg     $bg     $fg  $bg       $bg
+client.urgent           $bg     $bg     $fg  $bg       $bg
+client.placeholder      $bg     $bg     $fg  $bg       $bg
 
-
+client.background       $bg2
 ###############################################
 # Windows style
 ###############################################
@@ -190,8 +195,8 @@ assign [class="Spotify"]  $ws3
 # enable floating mode for selected windows
 for_window [class="Nitrogen"] floating enable border pixel 2
 
-gaps inner 5
-gaps outer 10
+gaps inner 10
+gaps outer 15
 
 
 
@@ -223,3 +228,4 @@ exec --no-startup-id slack
 exec --no-startup-id compton
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id nitrogen --restore
+exec_always --no-startup-id wal -R -n
