@@ -12,16 +12,16 @@
 
 # my colors configuration are never perfect
 #
-set_from_resource $fg i3wm.color1 #f0f0f0
-set_from_resource $fg2 i3wm.color2 #f0f0f0
-set_from_resource $bg i3wm.color7 #2f3d44
-set_from_resource $bg2 i3wm.color5 #2f3d44
+set_from_resource $fg i3wm.color4 #f0f0f0
+set_from_resource $fg2 i3wm.color5 #f0f0f0
+set_from_resource $bg i3wm.color2 #2f3d44
+set_from_resource $bg2 i3wm.color3 #2f3d44
 # class                 border  backgr. text indicator child_border
-client.focused          $bg     $bg2     $fg2  $bg2       $bg2
-client.focused_inactive $bg     $bg     $fg  $bg       $bg
-client.unfocused        $bg2     $bg     $fg  $bg       $fg
-client.urgent           $bg     $bg     $fg  $bg       $bg
-client.placeholder      $bg     $bg     $fg  $bg       $bg
+client.focused          $bg     $bg2    $fg2  $bg2      $fg2
+client.focused_inactive $bg     $bg     $fg   $bg       $bg
+client.unfocused        $bg2    $bg     $fg   $bg       $bg
+client.urgent           $bg     $bg     $fg   $bg       $bg
+client.placeholder      $bg     $bg     $fg   $bg       $bg
 
 client.background       $bg2
 ###############################################
@@ -147,11 +147,11 @@ bindsym $mod+Shift+e exec --no-startup-id i3lock
 ###############################################
 
 # customize workspaces name
-set $ws1 
-set $ws2 
-set $ws3 
-set $ws4 
-set $ws5 
+set $ws1 
+set $ws2 
+set $ws3 
+set $ws4 
+set $ws5 
 set $ws6 
 set $ws7 
 
@@ -162,6 +162,7 @@ workspace $ws4 output HDMI1
 workspace $ws5 output eDP1
 workspace $ws6 output eDP1
 workspace $ws7 output eDP1
+
 
 # switch to workspace
 bindsym $mod+KP_End workspace $ws1
@@ -195,9 +196,18 @@ assign [class="Spotify"]  $ws3
 # enable floating mode for selected windows
 for_window [class="Nitrogen"] floating enable border pixel 2
 
+# GAPS
+#gaps inner <px>
+#gaps outer <px>
+#gaps horizontal <px>
+#gaps vertical <px>
+#gaps top <px>
+#gaps right <px>
+#gaps bottom <px>
+#gaps left <px>
 gaps inner 10
-gaps outer 15
-
+#gaps outer 125
+#workspace $ws3 gaps inner 0
 
 
 ###############################################

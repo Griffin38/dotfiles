@@ -2,10 +2,10 @@
 
 if [ "$(systemctl is-active bluetooth.service)" = "active" ]; then
   if [ "$(echo -e "devices" | bluetoothctl | grep Mpow | wc -l)" == 3 ]; then
-    echo ""
+    echo ""
   else
-	  echo ""
+	  echo ""
   fi
 else
-	echo ""
+	echo ""
 fi
