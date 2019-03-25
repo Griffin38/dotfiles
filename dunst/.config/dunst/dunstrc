@@ -71,10 +71,10 @@
 
 [playing]
  appname = Spotify
- format = "<span foreground='#81a926'><b>%s</b>%p</span>\n%b"
+ format = "<span foreground='#81a926'><b> %s</b>%p</span>\n%b"
 
 [slack]
  appname = Slack
- format = "<span foreground='#FF941C'><b>-%s-</b></span>\n%b"
+ format = "<span foreground='#FF941C'><b>-%s-</b></span>\n%b"
  background = "#db7708"
  foreground = "#ffffff"

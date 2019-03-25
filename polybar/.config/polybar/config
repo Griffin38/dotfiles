@@ -56,8 +56,8 @@ border-color = #00000000
 padding-left = 2
 padding-right = 2
 
-module-margin-left = 2
-module-margin-right = 2
+module-margin-left = 1
+module-margin-right = 1
 
 font-0 = "Source Code Pro Semibold:size=10;1"
 font-1 = "Font Awesome 5 Free:style=Solid:size=10;1"
@@ -92,12 +92,12 @@ border-color = #00000000
 padding-left = 2
 padding-right = 2
 
-module-margin-left = 2
-module-margin-right = 2
+module-margin-left = 1
+module-margin-right = 1
 
 font-0 = "Source Code Pro Semibold:size=10;1"
-font-1 = "Font Awesome 5 Free:style=Solid:size=10;1"
-font-2 = "Font Awesome 5 Brands:size=10;"
+font-1 = "Font Awesome 5 Free:style=Solid:size=9;1"
+font-2 = "Font Awesome 5 Brands:size=9;1"
 
 
 
@@ -188,8 +188,7 @@ label-maxlen = 40
 format = <label>
 format-background = ${colors.background-alt}
 format-foreground = ${colors.foreground}
-format-padding = 2
-
+format-padding = 0
 
 [module/i3]
 type = internal/i3
