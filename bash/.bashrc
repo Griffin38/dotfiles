@@ -6,7 +6,7 @@
 [[ $- != *i* ]] && return
 
 # >>> Added by cnchi installer
-EDITOR=/usr/bin/nano
+EDITOR=vim
 
 
 #######MY adds #######
@@ -100,33 +100,16 @@ alias listS='pacmd list-sinks | grep -e 'name:' -e 'index:''
 alias setOH='pactl set-sink-port 1 analog-output-headphones'
 alias setOS='pactl set-sink-port 1 analog-output-speaker'
 alias oops='sudo nano ../../etc/lightdm/lightdm.conf'
-# Protective owl
-#echo       '   _________ '
-#echo       '  /_  ___   \ '
-#echo       ' /3 \/8  \   \ '
-#echo       ' \__/\___/   / '
-#echo       '  \_\/______/ '
-#echo       '  /     /\\\\\ '
-#echo       ' |      \\\\\\\         Welcome '
-#echo       '  \      \\\\\\\ '
-#echo       '   \______/\\\\\ '
-#echo       '    _||_||_     '
-#echo       '_______________________________'
-# Zen Buuda
-echo       '                _ooOoo_'
-echo       '       z       o8888888o'
-echo       '        z  ,_, 88" . "88'
-echo       '          (-,-)(| -_- |)'
-echo       '          {`"`}3\  =  /8'
-echo       '          /"-"-_/`---`\____'
-echo       '         / \\|         \/  \.'
-echo       '        /  \\|||   :  |||//  \'
-echo       '        /  _||||| -:- |||||_  \'
-echo       '        |   | \\\  -  /| |   |'
-echo       '        | \_|  `\`---//  |_/ |'
-echo       '        \  .-\__ `-. -__/-.  /'
-echo       '      ___`. .  /--.--\  `. .___'
-echo       '   ."" `<  `.___\_<|>_/___.` _> \"".   ,_,'
-echo       '  | | :  `- \`. ;`. _/; .`/ /  .` ; | (o,o)'
-echo       '  \  \ `-.   \_\_`. _.`_/_/  - _.` /  {`"`}'
-echo       '===-.___-.__\ \___  /__.-_._.-========|"-"|==='
+echo '       z'
+echo '        z  ,_,'
+echo '          (-,-)'
+echo '          {`"`}'
+echo '          -"-"-'
+echo '           `\ |     ,_,'
+echo '            | |    (o,o)'
+echo '            | |    {`"`}'
+echo '             \ \   |"-"|'
+echo '             `\ `---/ /'
+echo '               `-.  /|'
+echo '                  \ `\'
+echo '                 _/_|.\_'
