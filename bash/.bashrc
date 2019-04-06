@@ -106,7 +106,7 @@ echo '      (-,-)    |/ '
 echo ' \|   {`"`}   // '
 echo '  \`--´-"-"~^´/ '
 echo '   ``````\ \´´  _`/   '
-echo '         | |   /_´   ,_,'
+echo '         | |   /~´   ,_,'
 echo '         | \__//    (o,o)'
 echo '          \ | |     {`"`}    _'
 echo '           \\ \     /"-"----´ | '
@@ -117,3 +117,4 @@ echo '             ____/_|.\____'
 source /usr/share/nvm/init-nvm.sh
 eval "$(direnv hook bash)"
 eval "$(rbenv init -)"
+-e
