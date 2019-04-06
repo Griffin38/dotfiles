@@ -115,3 +115,6 @@ echo '             `\ `---/ /´´´´´´'
 echo '               `-.  /|'
 echo '                  \ `\'
 echo '                 _/_|.\_'
+source /usr/share/nvm/init-nvm.sh
+eval "$(direnv hook bash)"
+eval "$(rbenv init -)"
