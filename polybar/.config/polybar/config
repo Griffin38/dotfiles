@@ -71,6 +71,11 @@ modules-right =  date memory cpu bluetoothStatus ssid
 cursor-click = pointer
 cursor-scroll = ns-resize
 
+tray-position = right
+#tray-background = #ffffff
+tray-maxsize = 16
+tray-scale = 1.0
+
 [bar/secondary_bar]
 monitor = eDP1
 width = 100%
@@ -105,7 +110,6 @@ modules-left = i3 volume
 modules-center = date
 modules-right = memory cpu backlight bluetoothStatus battery ssid
 
-#tray-position =
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -193,7 +197,7 @@ format-padding = 0
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
-index-sort = true
+index-sort = false
 wrapping-scroll = false
 ; Only show workspaces on the same output as the bar
 pin-workspaces = true
@@ -303,7 +307,7 @@ type = custom/script
 exec = ~/polybar-scripts/spotify.sh
 interval = 2
 tail = true
-
+label = %output:20:20:...%
 click-left = mocp -r
 click-middle = mocp -G
 click-right = mocp -f
