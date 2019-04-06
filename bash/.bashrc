@@ -117,4 +117,4 @@ echo '             ____/_|.\____'
 source /usr/share/nvm/init-nvm.sh
 eval "$(direnv hook bash)"
 eval "$(rbenv init -)"
--e
+
