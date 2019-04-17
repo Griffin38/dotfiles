@@ -95,10 +95,6 @@ alias checkKeys='xev -event keyboard'
 alias clock='tty-clock -sScbn -C 6'
 alias bell="echo $'\a'"
 
-# sound output commands
-alias listS='pacmd list-sinks | grep -e 'name:' -e 'index:''
-alias setOH='pactl set-sink-port 1 analog-output-headphones'
-alias setOS='pactl set-sink-port 1 analog-output-speaker'
 alias oops='sudo vim ../../etc/lightdm/lightdm.conf'
 echo '    z '
 echo '     z ,_,       _'

@@ -19,7 +19,7 @@
 - rbenv init
 - echo 'eval "$(rbenv init -)"' >> ~/.bashrc
 - yay ruby-build
-- curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash 
+- curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
 
 ## Add Direnv
 - yay direnv
