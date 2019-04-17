@@ -62,7 +62,7 @@ eval "$(rbenv init -)"
 source <(kitty + complete setup bash)
 
 # BASH
-export PS1="\[\033[38;5;38m\]\\$\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;226m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\e[31m\]@\[\e[m\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;226m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\e[31m\]*\[\e[m\]\[\033[38;5;32m\] \`parse_git_branch\`\n->\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
+export PS1="\[\033[38;5;38m\]\\$\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;226m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\e[31m\]@\[\e[m\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;226m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\e[31m\]*\[\e[m\]\[\033[38;5;32m\] \`parse_git_branch\`\n~>\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
 alias ls='ls -l --color=auto'
 
 #GIT
