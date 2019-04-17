@@ -6,7 +6,7 @@
 [[ $- != *i* ]] && return
 
 # >>> Added by cnchi installer
-EDITOR=/usr/bin/nano
+EDITOR=vim
 
 
 #######MY adds #######
@@ -62,7 +62,7 @@ eval "$(rbenv init -)"
 source <(kitty + complete setup bash)
 
 # BASH
-export PS1="\[\033[38;5;38m\]\\$\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;226m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\e[31m\]@\[\e[m\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;226m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\e[31m\]*\[\e[m\]\[\033[38;5;32m\] \`parse_git_branch\`\n->\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
+export PS1="\[\033[38;5;38m\]\\$\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;226m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\e[31m\]@\[\e[m\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;226m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\e[31m\]*\[\e[m\]\[\033[38;5;32m\] \`parse_git_branch\`\n~>\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
 alias ls='ls -l --color=auto'
 
 #GIT
@@ -81,10 +81,10 @@ alias rc='./bin/rails c'
 alias jek='bundle exec jekyll serve'
 alias hrc='heroku run rails console -a'
 # cd to projects
-alias gv='cd ~/Documents/Code/viper'
-alias gt='cd ~/Documents/Code/topnotes'
-alias gg='cd ~/Documents/Code/grindhouse'
-alias gk='cd ~/Documents/Code/kopi'
+alias gv='cd ~/Documents/code/viper'
+alias gt='cd ~/Documents/code/topnotes'
+alias gg='cd ~/Documents/code/grindhouse'
+alias gk='cd ~/Documents/code/kopi'
 #music
 alias pp='playerctl play-pause'
 alias pn='playerctl next'
@@ -95,38 +95,22 @@ alias checkKeys='xev -event keyboard'
 alias clock='tty-clock -sScbn -C 6'
 alias bell="echo $'\a'"
 
-# sound output commands
-alias listS='pacmd list-sinks | grep -e 'name:' -e 'index:''
-alias setOH='pactl set-sink-port 1 analog-output-headphones'
-alias setOS='pactl set-sink-port 1 analog-output-speaker'
-alias oops='sudo nano ../../etc/lightdm/lightdm.conf'
-# Protective owl
-#echo       '   _________ '
-#echo       '  /_  ___   \ '
-#echo       ' /3 \/8  \   \ '
-#echo       ' \__/\___/   / '
-#echo       '  \_\/______/ '
-#echo       '  /     /\\\\\ '
-#echo       ' |      \\\\\\\         Welcome '
-#echo       '  \      \\\\\\\ '
-#echo       '   \______/\\\\\ '
-#echo       '    _||_||_     '
-#echo       '_______________________________'
-# Zen Buuda
-echo       '                _ooOoo_'
-echo       '       z       o8888888o'
-echo       '        z  ,_, 88" . "88'
-echo       '          (-,-)(| -_- |)'
-echo       '          {`"`}3\  =  /8'
-echo       '          /"-"-_/`---`\____'
-echo       '         / \\|         \/  \.'
-echo       '        /  \\|||   :  |||//  \'
-echo       '        /  _||||| -:- |||||_  \'
-echo       '        |   | \\\  -  /| |   |'
-echo       '        | \_|  `\`---//  |_/ |'
-echo       '        \  .-\__ `-. -__/-.  /'
-echo       '      ___`. .  /--.--\  `. .___'
-echo       '   ."" `<  `.___\_<|>_/___.` _> \"".   ,_,'
-echo       '  | | :  `- \`. ;`. _/; .`/ /  .` ; | (o,o)'
-echo       '  \  \ `-.   \_\_`. _.`_/_/  - _.` /  {`"`}'
-echo       '===-.___-.__\ \___  /__.-_._.-========|"-"|==='
+alias oops='sudo vim ../../etc/lightdm/lightdm.conf'
+echo '    z '
+echo '     z ,_,       _'
+echo '      (-,-)    |/ '
+echo ' \|   {`"`}   // '
+echo '  \`--´-"-"~^´/ '
+echo '   ``````\ \´´  _`/   '
+echo '         | |   /~´   ,_,'
+echo '         | \__//    (o,o)'
+echo '          \ | |     {`"`}    _'
+echo '           \\ \     /"-"----´ | '
+echo '            `\ `---/ /´´´´´´´´'
+echo '              `-.  /|'
+echo '                 \ `\'
+echo '             ____/_|.\____'
+source /usr/share/nvm/init-nvm.sh
+eval "$(direnv hook bash)"
+eval "$(rbenv init -)"
+
