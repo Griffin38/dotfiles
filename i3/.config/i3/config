@@ -432,6 +432,7 @@ bindsym $mod+F4 exec --no-startup-id code
 bindsym $mod+9 exec --no-startup-id blurlock
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id "sudo sh ~/dotfiles/l480-fix-touchpad"
 
 bindsym KP_Up exec --no-startup-id playerctl play-pause
 bindsym KP_Home exec --no-startup-id playerctl previous
