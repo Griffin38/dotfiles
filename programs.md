@@ -3,8 +3,10 @@
 # stow
 # kitty
 # spotify
-# font-awesome
+# slack
+# font-awesome/fira-code
 # brightnessctl / light
+# arandr / autorandr
 - https://wiki.archlinux.org/index.php/PC_speaker - disable beeeeeep<>
 
 ## lenovo - mouse script
