@@ -271,13 +271,13 @@ set_from_resource $term_color15    color15
 bindsym $mod+m bar mode toggle
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-  client.focused          #556064 #556064 #80FFF9 #FDF6E3
+  client.focused          #454948 #454948 #ffffff #FDF6E3
   client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
-  client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948
+  client.unfocused        #1d1f21 #1d1f21 #454948 #454948
   client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
   client.placeholder      #000000 #0c0c0c #ffffff #000000 
-
-  client.background       #2B2C2B
+#focused-text 80FFF9  focused_inactive-text 1ABC9C =  unfocused-text  focused-bg-bord 556064 unfocused-bg 2F3D44
+client.background       #2B2C2B
 
 #############################
 ### settings for i3-gaps  ###
@@ -385,7 +385,8 @@ bindsym $mod+Shift+q kill
 # Start Applications shortcuts
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 bindsym $mod+F2 exec chromium
-bindsym $mod+F3 exec pcmanfmbindsym $mod+F4 exec --no-startup-id code
+bindsym $mod+F3 exec pcmanfm
+bindsym$mod+F4 exec --no-startup-id code
 bindsym $mod+Return exec --no-startup-id kitty
 
 bindsym KP_Up exec --no-startup-id playerctl play-pause
@@ -395,17 +396,20 @@ bindsym KP_Add exec --no-startup-id amixer sset 'Master' 5%+
 bindsym KP_Subtract exec --no-startup-id amixer sset 'Master' 5%-
 bindsym KP_Multiply exec --no-startup-id amixer sset 'Master' 0%
 
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+
 #############################
 ###        Auto-start     ###
 #############################
 #bindsym $mod+F1 exec --no-startup-id rofi -show run -theme $HOME/.config/rofi/theme.rasi
-exec --no-startup-id autorandr -c
+exec_always --no-startup-id autorandr -c && nitrogen --restore
 exec --no-startup-id chromium
 exec --no-startup-id spotify
 exec --no-startup-id slack
 exec --no-startup-id "sh ~/dotfiles/l480-fix-touchpad"
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec --no-startup-id nitrogen --restore
 
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 #exec --no-startup-id manjaro-hello

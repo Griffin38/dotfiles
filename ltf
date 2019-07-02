@@ -1,0 +1,3 @@
+#!/bin/bash
+
+echo -n "elantech" | sudo /usr/bin/tee /sys/bus/serio/devices/serio1/protocol
