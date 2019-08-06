@@ -50,8 +50,9 @@ foreground = ${colors.foreground}
 line-size = 1
 line-color = ${colors.foreground}
 
-border-size = 0
-border-color = #00000000
+border-size = 5
+border-bottom-size = 0
+border-color = #0000000
 
 padding-left = 2
 padding-right = 2
@@ -74,7 +75,7 @@ cursor-scroll = ns-resize
 tray-position = right
 #tray-background = #ffffff
 tray-maxsize = 16
-tray-scale = 1.0
+tray-scale = 0.75
 
 [bar/secondary_bar]
 monitor = eDP1
@@ -91,7 +92,7 @@ foreground = ${colors.foreground}
 line-size = 1
 line-color = ${colors.foreground}
 
-border-size = 0
+border-size = 5
 border-color = #00000000
 
 padding-left = 2
@@ -203,8 +204,9 @@ label-mode-foreground = ${colors.foreground}
 label-mode-background = ${colors.background}
 ; focused = Active workspace on focused monitor
 label-focused = %name%
-label-focused-background = ${colors.primary}
-label-focused-foreground = #000000
+label-focused-background = #0000000
+;${colors.primary}
+label-focused-foreground = #15D0F1
 ;${colors.secondary}
 label-focused-underline= ${xrdb:color6:colors.primary}
 label-focused-padding = 2
@@ -305,7 +307,7 @@ type = custom/script
 exec = ~/polybar-scripts/spotify.sh
 interval = 2
 tail = true
-label = %output:20:20:...%
+label = %output:1:15:...%
 click-left = mocp -r
 click-middle = mocp -G
 click-right = mocp -f
