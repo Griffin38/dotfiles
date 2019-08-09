@@ -285,11 +285,14 @@ client.background       #2B2C2B
 
 # Set inner/outer gaps
 gaps inner 10
-gaps outer -2
+gaps outer 15
+gaps top 0
+gaps horizontal 15
+gaps bottom 15
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
 # gaps inner all set 10
-# gaps outer all plus 5
+# gaps outer top set 5
 # Smart gaps (gaps used if only more than one container on the workspace)
 #smart_gaps on
 # Smart borders (draw borders around container only if it is not the only container on this workspace) 
