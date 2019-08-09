@@ -52,6 +52,7 @@ line-color = ${colors.foreground}
 
 border-size = 5
 border-bottom-size = 0
+border-top-size = 10
 border-color = #0000000
 
 padding-left = 2
