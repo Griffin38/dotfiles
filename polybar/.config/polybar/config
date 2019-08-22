@@ -19,11 +19,11 @@
 [colors]
 background = ${xrdb:color0:#1d1f2110}
 background-alt = #1d1f210
-foreground = ${xrdb:color6:#c7ccd1}
+foreground = ${xrdb:color0:#c7ccd1}
 foreground-alt = ${xrdb:color7:#1d1f21}
 primary = ${xrdb:color6:#ffb52a}
 secondary = ${xrdb:color7:#e60053}
-shaded = #15ffffff
+shaded = ${xrdb:color1:#15ffff}
 alert =  ${xrdb:color3:#bd2c40}
 highlight = #D9583C
 bottom-background = #00ffffff
@@ -207,7 +207,7 @@ label-mode-background = ${colors.background}
 label-focused = %name%
 label-focused-background = #0000000
 ;${colors.primary}
-label-focused-foreground = #15D0F1
+label-focused-foreground = ${colors.shaded}
 ;${colors.secondary}
 label-focused-underline= ${xrdb:color6:colors.primary}
 label-focused-padding = 2
