@@ -57,8 +57,6 @@ function parse_git_dirty {
 	fi
 }
 
-eval "$(direnv hook bash)"
-eval "$(rbenv init -)"
 source <(kitty + complete setup bash)
 
 # BASH
