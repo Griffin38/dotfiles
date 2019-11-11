@@ -341,6 +341,9 @@ click-left = playerctl play-pause
 type = custom/script
 exec = ~/polybar-scripts/bluetooth.sh
 interval = 10
+click-left = bluetoothctl power on
+click-middle = bluetoothctl connect EB:06:EF:56:81:13
+click-right = bluetoothctl power off
 
 [module/ssid]
 type = custom/script
