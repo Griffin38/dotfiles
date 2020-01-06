@@ -2,9 +2,9 @@
 status() {
 if [[ $(playerctl status) == 'Playing' ]];
   then
-    echo ' '
+    echo ' '
   else
-    echo ' '
+    echo ' '
 fi
 }
 status
