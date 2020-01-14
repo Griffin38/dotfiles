@@ -216,7 +216,7 @@ label-mode-background = ${colors.background}
 label-focused = 
 label-focused-background = #0000000
 ;${colors.primary}
-label-focused-foreground = ${colors.shaded}
+label-focused-foreground = ${xrdb:color3:colors.primary}
 ;${colors.secondary}
 label-focused-underline= ${xrdb:color6:colors.primary}
 label-focused-padding = 2
