@@ -77,7 +77,7 @@ alias gmerge='git checkout'
 alias ggpush='git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)'
 alias gbda='git branch --merged | grep -vE "master" | grep -vE "\*" | command xargs -n 1 git branch -d'
 #work related
-export PATH_TO_PROJECTS="$HOME/Documents/Code"
+export PATH_TO_PROJECTS="$HOME/Documents/code"
 alias rs='./bin/rails s -b 127.0.0.1'
 alias rc='./bin/rails c'
 alias jek='bundle exec jekyll serve'
@@ -86,7 +86,7 @@ alias hrc='heroku run rails console -a'
 alias gv="cd $PATH_TO_PROJECTS/viper"
 alias gt="cd $PATH_TO_PROJECTS/topnotes"
 alias gg="cd $PATH_TO_PROJECTS/grindhouse"
-alias gk="cd $PATH_TO_PTOJECTS/kopi"
+alias gk="cd $PATH_TO_PROJECTS/kopi"
 #music
 alias pp='playerctl play-pause'
 alias pn='playerctl next'
