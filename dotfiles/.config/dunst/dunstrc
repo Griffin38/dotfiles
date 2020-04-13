@@ -2,7 +2,7 @@
     frame_width = 1
     frame_color = "#788388"
     
-    font = Fira Code 10
+    font = Noto Sans 10
     
     # Allow a small subset of html markup:
     #   <b>bold</b>
@@ -68,16 +68,16 @@
     # the top and down respectevly.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    #geometry = "0x4-25+25"
-    geometry = "300x30-25+50"
+    geometry = "0x4-25+25"
+    
     # Shrink window if it's smaller than the width.  Will be ignored if
     # width is 0.
-    shrink = no
+    shrink = yes
     
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing windowmanager is
     # present (e.g. xcompmgr, compiz, etc.).
-    transparency = 90
+    transparency = 15
     
     # Don't remove messages, if the user is idle (no mouse or keyboard input)
     # for longer than idle_threshold seconds.
@@ -145,8 +145,8 @@
     dmenu = /usr/bin/dmenu -p dunst:
     
     # Browser for opening urls in context menu.
-    browser = chromium
-    
+    browser = palemoon
+
     # Align icons left/right/off
     icon_position = left
 
@@ -154,7 +154,7 @@
     icon_path = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/
 
     # Limit icons size.
-    max_icon_size=64
+    max_icon_size=128
 
 [shortcuts]
 
@@ -300,21 +300,3 @@
 #     foreground = "#F67245"
 #
 # vim: ft=cfg
-
-[playing]
- appname = Spotify
- format = "<span foreground='#81a926'><b> %s</b>%p</span>\n%b"
- foreground = "#ffffff"
-
-[slack]
- appname = Slack
- format = "<span foreground='#FF941C'><b>-%s-</b></span>\n%b"
- background = "#db7708"
- foreground = "#ffffff"
-
-#   %a  appname
-#   %s  summary
-#   %b  body
-#   %i  iconname (including its path)
-#   %I  iconname (without its path)
-#   %p  progress value if set ([  0%] to [100%]) or nothing
