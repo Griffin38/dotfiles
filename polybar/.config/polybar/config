@@ -17,8 +17,20 @@
 ;==========================================================
 
 [colors]
+x-color-1 = ${xrdb:color1}
+x-color-2 = ${xrdb:color2}
+x-color-3 = ${xrdb:color3}
+x-color-4 = ${xrdb:color4}
+x-color-5 = ${xrdb:color5}
+x-color-6 = ${xrdb:color6}
+x-color-7 = ${xrdb:color7}
+x-color-text = ${xrdb:color6}
+x-color-accent-1 = ${xrdb:color2}
+x-color-accent-2 = ${xrdb:color4}
+
 background = ${xrdb:color3:#1d1f2110}
 background-alt = ${xrdb:10color3:#70042B34}
+
 foreground = ${xrdb:color7:#c7ccd1}
 foreground-alt = ${xrdb:color7:#1d1f21}
 primary = ${xrdb:color6:#ffb52a}
@@ -45,7 +57,7 @@ height = 30
 radius = 0
 fixed-center = true
 background = ${colors.background-alt}
-foreground = ${colors.foreground}
+foreground = ${colors.x-color-text}
 
 line-size = 1
 line-color = ${colors.foreground}
@@ -92,7 +104,7 @@ height = 25
 radius = 0
 fixed-center = true
 background = ${colors.background-alt}
-foreground = ${colors.foreground}
+foreground = ${colors.x-color-text}
 
 line-size = 1
 line-color = ${colors.foreground}
@@ -112,7 +124,7 @@ font-0 = "Source Code Pro Semibold:size=10;1"
 font-1 = "Font Awesome 5 Free:style=Solid:size=10;1"
 font-2 = "Font Awesome 5 Brands:size=10;"
 
-modules-left = previous playpause next spotify demo
+modules-left = previous musicStatus next music demo
 modules-right =  date memory cpu backlight bluetoothStatus battery ssid volume
 
 [bar/secondary_bar]
@@ -126,7 +138,7 @@ fixed-center = true
 
 enable_ipc = true
 background = ${colors.background-alt}
-foreground = ${colors.foreground}
+foreground = ${colors.x-color-text}
 
 line-size = 1
 line-color = ${colors.foreground}
@@ -160,25 +172,25 @@ override-redirect = true
 type = custom/text
 content = ""
 content-font = 2
-content-foreground = ${colors.foreground}
+content-foreground = ${colors.x-color-text}
 
 [module/arrow_r]
 type = custom/text
 content = ""
 content-font = 2
-content-foreground = #d3d3d3
+content-foreground = ${colors.x-color-text}
 
 [module/arrow_l]
 type = custom/text
 content = ""
 content-font = 2
-content-foreground = #d3d3d3
+content-foreground = ${colors.x-color-text}
 
 [module/3balls]
 type = custom/text
 content = ""
 content-font = 2
-content-foreground = #d3d3d3
+content-foreground = ${colors.x-color-text}
 
 ;-------------------------------------------------------------------------------
 ;	M O D U L E S
@@ -192,6 +204,7 @@ format-muted = 
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
+format-foreground = ${colors.x-color-text}
 
 [module/date]
 type = internal/date
@@ -203,6 +216,7 @@ time-alt = %H:%M:%S
 format-prefix = 
 #format-prefix-foreground = ${colors.foreground-alt}
 label = %date% %time%
+format-foreground = ${colors.x-color-accent-2}
 
 [module/ewmh]
 type = internal/xworkspaces
@@ -211,8 +225,8 @@ enable-click = true
 enable-scroll = true
 
 label-active = %name%
-label-active-foreground = ${colors.foreground}
-label-active-underline = ${colors.foreground}
+label-active-foreground = ${colors.x-color-text}
+label-active-underline = ${colors.x-color-accent-1}
 label-active-background = ${colors.background}
 label-active-padding = 1
 
@@ -231,7 +245,7 @@ label = %title%
 label-maxlen = 30
 format = <label>
 format-background = ${colors.background-alt}
-format-foreground = ${colors.foreground}
+format-foreground = ${colors.x-color-text}
 format-padding = 0
 
 [module/i3]
@@ -242,15 +256,15 @@ wrapping-scroll = false
 ; Only show workspaces on the same output as the bar
 pin-workspaces = true
 label-mode-padding = 2
-label-mode-foreground = ${colors.foreground}
+label-mode-foreground = ${colors.x-color-text}
 label-mode-background = ${colors.background}
 ; focused = Active workspace on focused monitor
 label-focused = 
 label-focused-background = #0000000
 ;${colors.primary}
-label-focused-foreground = ${xrdb:color3:colors.primary}
+label-focused-foreground = ${colors.x-color-accent-1}
 ;${colors.secondary}
-label-focused-underline= ${xrdb:color6:colors.primary}
+label-focused-underline= ${colors.x-color-accent-2}
 label-focused-padding = 2
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = 
@@ -278,6 +292,7 @@ adapter = AC
 poll-interval = 5
 format-charging =  <label-charging>
 format-discharging =  <label-discharging>
+format-foreground = ${colors.x-color-accent-2}
 label-charging = %percentage%%
 label-discharging = %percentage%%
 label-full = 
@@ -297,6 +312,7 @@ format = <label>
 ;   %percentage-cores% - load percentage for each core
 ;   %percentage-core[1-9]% - load percentage for specific core
 label =  %percentage:02%%
+format-foreground = ${colors.x-color-accent-2}
 
 [module/memory]
 type = internal/memory
@@ -332,6 +348,7 @@ format = <label>
 ;   %gb_swap_free%
 ;   %gb_swap_used%
 label =  %gb_used%
+format-foreground = ${colors.x-color-accent-2}
 
 [module/demo]
 type = custom/ipc
@@ -358,6 +375,7 @@ label-song-maxlen = 95
 label-song-ellipsis = true
 ;label-song-foreground = ${colors.green}
 
+format-foreground = ${colors.x-color-text}
 icon-prev  = 
 icon-next  = 
 icon-seekb = 
@@ -385,6 +403,7 @@ exec = echo ""
 ; Check if spotify is running before displaying the icon
 exec-if = "pgrep spotify"
 format-underline = ${xrdb:color3:colors.primary}
+format-foreground = ${colors.x-color-text}
 line-size = 1
 click-left = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
 
@@ -398,10 +417,11 @@ exec = echo ""
 ; Check if spotify is running before displaying the icon
 exec-if = "pgrep spotify"
 format-underline = ${xrdb:color3:colors.primary}
+format-foreground = ${colors.x-color-text}
 line-size = 1
 click-left = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
 
-[module/playpause]
+[module/playpause1]
 type = custom/ipc
 ; Default
 hook-0 = echo "a"
@@ -409,9 +429,26 @@ hook-0 = echo "a"
 hook-1 = echo ""
 ; Paused
 hook-2 = echo ""
-exec-if = "pgrep spotify"
+exec-if = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:'org.mpris.MediaPlayer2.Player' string:'PlaybackStatus'|egrep -A 1 "string"|cut -b 26-|cut -d '"' -f 1|egrep -v ^$ | grep -c Playing"
 initial = 2
 format-underline = ${xrdb:color3:colors.primary}
+format-foreground = ${colors.x-color-accent-2}
+format-padding = 1
+line-size = 1
+click-left = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+
+[module/playpause2]
+type = custom/ipc
+; Default
+hook-0 = echo "a"
+; Playing
+hook-1 = echo ""
+; Paused
+hook-2 = echo ""
+exec-if = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:'org.mpris.MediaPlayer2.Player' string:'PlaybackStatus'|egrep -A 1 "string"|cut -b 26-|cut -d '"' -f 1|egrep -v ^$ | grep -c Playing"
+initial = 2
+format-underline = ${xrdb:color3:colors.primary}
+format-foreground = ${colors.x-color-text}
 format-padding = 1
 line-size = 1
 click-left = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
@@ -426,11 +463,13 @@ format-underline = ${xrdb:color3:colors.primary}
 line-size = 1
 ; [i3wm only] - Uncomment the below line to focus on Spotify when clicking on the song name (credits to https://github.com/Esya)
 click-left = i3-msg '[class="Spotify"] focus'
+format-foreground = ${colors.x-color-text}
 
 [module/backlight]
 type = custom/script
 exec =  ~/polybar-scripts/brightness.sh
 interval = 2
+format-foreground = ${colors.x-color-accent-2}
 click-left= sudo -u pl brightnessctl s 10%-
 click-right= sudo -u pl brightnessctl s 10%+
 
@@ -440,29 +479,32 @@ exec = ~/polybar-scripts/spotify.sh
 interval = 2
 tail = true
 label = %output:1:35:...%
-click-left = mocp -r
-click-middle = mocp -G
-click-right = mocp -f
-
-scroll-up = mocp -k 10
-scroll-down = mocp -k -10
+format-padding = 1
+format-underline = ${colors.x-color-accent-1}
+format-foreground = ${colors.x-color-accent-2}
 
 [module/musicStatus]
 type = custom/script
 exec = ~/polybar-scripts/statusMusic.sh
 interval = 0.5
-click-left = playerctl play-pause
+click-left = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+format-foreground = ${colors.x-color-accent-2}
+format-underline = ${colors.x-color-accent-1}
+format-padding = 1
+line-size = 1
 
 [module/bluetoothStatus]
 type = custom/script
 exec = ~/polybar-scripts/bluetooth.sh
 interval = 10
+format-foreground = ${colors.x-color-accent-2}
 click-left = bluetoothctl power on
 click-middle = bluetoothctl connect EB:06:EF:56:81:13
 click-right = bluetoothctl power off
 
 [module/ssid]
 type = custom/script
+format-foreground = ${colors.x-color-accent-2}
 exec = ~/polybar-scripts/ssid.sh
 click-middle = notify-send $(hostname -I | cut -d ' ' -f 1)
 click-left = exec kitty nmtui-connect
