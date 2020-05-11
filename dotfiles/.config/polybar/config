@@ -49,7 +49,6 @@ isecondary =  #367588
 
 [bar/main_bar]
 enable-ipc = true
-monitor = HDMI-1
 width = 100%
 height = 30
 ;offset-x = 1%
