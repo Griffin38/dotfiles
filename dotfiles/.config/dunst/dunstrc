@@ -77,7 +77,7 @@
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing windowmanager is
     # present (e.g. xcompmgr, compiz, etc.).
-    transparency = 60
+    transparency = 30
     
     # Don't remove messages, if the user is idle (no mouse or keyboard input)
     # for longer than idle_threshold seconds.
@@ -303,7 +303,8 @@
 
 [playing]
  appname = Spotify
- format = "<span foreground='#81a926'><b> %s</b>%p</span>\n%b"
+ format = "<span foreground='#1ED760'><b> %s</b>%p</span>\n%b"
+ background = "#81a926"
  foreground = "#ffffff"
 
 [slack]

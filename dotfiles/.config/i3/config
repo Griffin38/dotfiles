@@ -86,8 +86,8 @@ bindsym $mod+minus scratchpad show
 ##                                     WORKSPACES                                             ##
 ################################################################################################
 
-set $monitor DPI-3
-set $monitor2 HDMI-1
+set $monitor HDMI-1
+set $monitor2 DPI-3
 set $ws1 1-
 set $ws2 2-
 set $ws3 3-
@@ -400,5 +400,6 @@ exec --no-startup-id clipit
 exec --no-startup-id xautolock -time 10 -corners -000 -locker blurlock
 exec --no-startup-id wal -R
 
+exec_always autorandr -c
 exec_always nitrogen --restore
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh

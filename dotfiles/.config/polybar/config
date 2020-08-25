@@ -124,7 +124,7 @@ font-1 = "Font Awesome 5 Free:style=Solid:size=10;1"
 font-2 = "Font Awesome 5 Brands:size=10;"
 
 modules-left = previous musicStatus next music demo
-modules-right =  date memory cpu sid volume
+modules-right =  date memory cpu ssid volume
 
 [bar/secondary_bar]
 monitor = eDP1
