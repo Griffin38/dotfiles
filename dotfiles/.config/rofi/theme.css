@@ -33,6 +33,7 @@ configuration {
     c13: #ebcb8b;
     c14: #a3be8c;
     c15: #b48ead;
+    spotify-fg: #1db954;
 
     foreground:  @c9;
     backlight:   #ccffeedd;
@@ -41,7 +42,7 @@ configuration {
     highlight:     underline bold #eceff4;
 
     /* #223e4f */
-    transparent: rgba(46, 84, 107, 0.65);
+    transparent: rgba(25, 20, 20, 0.65);
 }
 
 window {
@@ -102,7 +103,7 @@ element {
 }
 
 element selected.normal {
-	background-color: @c7;
+	background-color: @spotify-fg;
 	text-color: #2e3440;
 }
 
