@@ -14,3 +14,5 @@ dmenu
 compton
 dunst
 dmenu?recency
+chrome stable 
+pywal

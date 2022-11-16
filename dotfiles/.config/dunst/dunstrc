@@ -1,6 +1,6 @@
 [global]
     frame_width = 1
-    frame_color = "#788388"
+    frame_color = "#191414"
     
     font = Fira Code 10
     
@@ -181,12 +181,12 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#D63333"
-    foreground = "#556064"
+    foreground = "#F9FAF9"
+    background = "#556064"
     timeout = 10
 
 [urgency_normal]
-    background = "#263238"
+    background = "#191414"
     foreground = "#F9FAF9"
     timeout = 10
 
@@ -271,41 +271,13 @@
 #    background = "#A8EB41"
 #    foreground = "#FFFFFF"
 #
-[irc]
-        appname = weechat
-        timeout = 0
-        background = "#0033bb"
-        foreground = "#dddddd"
 #
-[weechat hl]
-     appname = weechat
-     category = weechat.HL
-     background = "#FF5C47"
-     foreground = "#FFFFFF"
-#
-[weechat pn]
-     appname = weechat
-     category = weechat.PM
-     background = "#D53B84"
-     foreground = "#FFFFFF"
-#
-#[CMUS]
-#    appname = CMUS
-#    category = cmus
-#    background = "#6C4AB7"
-#    foreground = "#FFE756"
-#
-#
-#     background = "#30AB70"
-#     foreground = "#F67245"
-#
-# vim: ft=cfg
-
 [playing]
  appname = Spotify
- format = "<span foreground='#1ED760'><b> %s</b>%p</span>\n%b"
- background = "#81a926"
+ format = "<span foreground='#1ed760'>%p</span><span foreground='#1db954'><b> %s</b></span>\n%b"
+ background = "#191414"
  foreground = "#ffffff"
+ corner_radius = '50px'
 
 [slack]
  appname = Slack
