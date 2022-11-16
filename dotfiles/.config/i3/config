@@ -86,8 +86,8 @@ bindsym $mod+minus scratchpad show
 ##                                     WORKSPACES                                             ##
 ################################################################################################
 
-set $monitor eDP1
-set $monitor2 DP2
+set $monitor HDMI-1
+set $monitor2 DPI-3
 set $ws1 1-
 set $ws2 2-
 set $ws3 3-
@@ -390,17 +390,16 @@ bindsym $mod+Tab exec polybar-msg cmd toggle;  gaps top all toggle 35
 #############################
 ###        Auto-start     ###
 #############################
-#bindsym $mod+F1 exec --no-startup-id rofi -show run -theme $HOME/.config/rofi/theme.rasi
-exec_always --no-startup-id autorandr -c && nitrogen --restore
 exec --no-startup-id chromium
 exec --no-startup-id spotify
 exec --no-startup-id slack
 exec --no-startup-id "sh ~/dotfiles/l480-fix-touchpad"
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-
-exec --no-startup-id xfce4-power-manager
+exec --no-startup-id compton -b
 exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 exec --no-startup-id xautolock -time 10 -corners -000 -locker blurlock
 exec --no-startup-id wal -R
-exec --no-startup-id compton -b
+
+exec_always autorandr -c
+exec_always nitrogen --restore
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh

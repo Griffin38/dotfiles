@@ -116,4 +116,3 @@ source <(kitty + complete setup bash)
 source /usr/share/nvm/init-nvm.sh
 eval "$(direnv hook bash)"
 eval "$(rbenv init -)"
-
