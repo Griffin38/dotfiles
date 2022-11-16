@@ -1,7 +1,6 @@
 configuration   {
 	lines: 5;
 	terminal: "kitty";
-  theme:   "~/.config/rofi/theme.css";
 /*	modi: "window,run,ssh";*/
 /*	width: 50;*/
 /*	columns: 1;*/
@@ -143,3 +142,5 @@ configuration   {
 /*	me-accept-entry: "MouseDPrimary";*/
 /*	me-accept-custom: "Control+MouseDPrimary";*/
 }
+
+@theme   "~/.config/rofi/theme.css"

@@ -283,24 +283,34 @@ format-padding = 0
 
 [module/i3]
 type = internal/i3
-format = <label-state> <label-mode>
+format =  <label-state> <label-mode>
+
+strip-wsnumbers = true
+fuzzy-match = true
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-default = 
 index-sort = true
 wrapping-scroll = false
 ; Only show workspaces on the same output as the bar
 pin-workspaces = true
 label-mode-padding = 2
-label-mode-foreground = ${colors.x-color-text}
+label-mode-foreground = ${colors.x-color-accent-1}
 label-mode-background = ${colors.background}
 ; focused = Active workspace on focused monitor
-label-focused = 
+label-focused = %icon%
 label-focused-background = #0000000
 ;${colors.primary}
-label-focused-foreground = ${colors.x-color-accent-1}
+label-focused-foreground = ${colors.x-color-text}
 ;${colors.secondary}
 label-focused-underline= ${colors.x-color-accent-2}
 label-focused-padding = 2
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = 
+label-unfocused = 
 label-unfocused-padding = 2
 ; visible = Active workspace on unfocused monitor
 label-visible = %name%

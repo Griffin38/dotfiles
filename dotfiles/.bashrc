@@ -68,6 +68,7 @@ if [ -f ~/.git-completion.bash ]; then
   __git_complete gck _git_checkout
   __git_complete gm __git_merge
 fi
+
 alias gpush='git push'
 alias gpull='git pull'
 alias gckm='git checkout master'
@@ -86,7 +87,7 @@ alias hrc='heroku run rails console -a'
 alias gv="cd $PATH_TO_PROJECTS/viper"
 alias gt="cd $PATH_TO_PROJECTS/topnotes"
 alias gg="cd $PATH_TO_PROJECTS/grindhouse"
-alias gk="cd $PATH_TO_PROJECTS/kopi"
+alias gk="cd $PATH_TO_PROJECTS/kopi-2"
 #music
 alias pp='playerctl play-pause'
 alias pn='playerctl next'
@@ -96,6 +97,8 @@ alias pb='playerctl previous'
 alias checkKeys='xev -event keyboard'
 alias clock='tty-clock -sScbn -C 6'
 alias bell="echo $'\a'"
+
+alias keychron='exec --no-startup-id echo 0 | sudo tee /sys/module/hid_apple/parameters/fnmode'
 
 echo '    z '
 echo '     z ,_,       _'
@@ -113,6 +116,14 @@ echo '                 \ `\'
 echo '             ____/_|.\____'
 
 source <(kitty + complete setup bash)
-source /usr/share/nvm/init-nvm.sh
 eval "$(direnv hook bash)"
 eval "$(rbenv init -)"
+
+
+# BEGIN_KITTY_SHELL_INTEGRATION
+if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
+# END_KITTY_SHELL_INTEGRATION
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
